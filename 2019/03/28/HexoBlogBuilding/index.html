@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN" class="loading">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Hexo Blog 搭建步骤 (For Serena) - Serena&#39;s Blog</title>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="Fechin,"> 
+    <meta name="description" content="
+简要介绍Hexo Blog搭建步骤，包括PC环境配置、博客主题设置、文章编写方式等，技术小白也很容易搭建，耐心看，不难(0.0)
+
+
+注意：以下命令均在终端中输入，Mac按command+空格 输,"> 
+    <meta name="author" content="Serena"> 
+    <link rel="alternative" href="atom.xml" title="Serena&#39;s Blog" type="application/atom+xml"> 
+    <link rel="icon" href="/img/favicon.png"> 
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <link rel="stylesheet" href="/css/diaspora.css">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-8691406134231910",
+              enable_page_level_ads: true
+         });
+    </script>
+    <script async custom-element="amp-auto-ads"
+        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
+    </script>
+</head>
+
+<body class="loading">
+    <span id="config-title" style="display:none">Serena&#39;s Blog</span>
+    <div id="loader"></div>
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;" data-url="https://github.com/Serena-Huang/Serena-Huang.github.io"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">Hexo Blog 搭建步骤 (For Serena)</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
+        <div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
+        </div>
+    </div>
+    <div class="scrollbar"></div>
+</div>
+
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">Hexo Blog 搭建步骤 (For Serena)</h1>
+        <div class="stuff">
+            <span>三月 28, 2019</span>
+            
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Blog/">Blog</a></li></ul>
+
+
+        </div>
+        <div class="content markdown">
+            <hr>
+<p>简要介绍Hexo Blog搭建步骤，包括PC环境配置、博客主题设置、文章编写方式等，技术小白也很容易搭建，耐心看，不难(0.0)</p>
+<hr>
+<blockquote>
+<p>注意：以下命令均在终端中输入，Mac按command+空格 输入ter回车，即可打开终端了。</p>
+</blockquote>
+<h2 id="Step1-PC环境配置"><a href="#Step1-PC环境配置" class="headerlink" title="Step1. PC环境配置"></a>Step1. PC环境配置</h2><h3 id="Hexo安装"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo安装</h3><p><strong>首先什么是Hexo呢？</strong><br>Hexo 是一个快速、简洁且高效的博客框架, Hexo 使用 Markdown（或其他渲染引擎）来编辑和解析文章，不需要从头开始编写网页，仅需要敲几行命令以及简单设置即可搭建博客。</p>
+<p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">点我：Hexo安装指南</a></p>
+<p><strong>那什么是Markdown呢？</strong><br>Markdown ，2004年由 John Gruberis 设计和开发，是一种可以使用普通文本编辑器编写的标记语言，通过简单的标记语法，它可以使普通文本内容具有一定的格式，即不同字体大小，粗体，斜体，颜色，文字居中，段落行距，插入链接，插入图表等等。</p>
+<p><a href="https://www.jianshu.com/p/191d1e21f7ed" target="_blank" rel="external">Markdown语法介绍</a><br><a href="https://blog.csdn.net/heimu24/article/details/81189700" target="_blank" rel="external">Markdown进阶设定</a></p>
+<p>然而，还有更方便的Markdown编辑器，可以像Word一样去编辑Markdown文档，这里我推荐<a href="http://soft.xiaoshujiang.com" target="_blank" rel="external">小书匠</a>编辑器。</p>
+<h3 id="配置SSH"><a href="#配置SSH" class="headerlink" title="配置SSH"></a>配置SSH</h3><p>由于需要在自己的PC机上，将写好的网页上传到GitHub，但是上传代码肯定要拥有你的github权限才可以，但是直接使用用户名和密码太不安全了，所以我们使用ssh key来解决本地和服务器的连接问题。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/. ssh</div></pre></td></tr></table></figure></p>
+<p>如果提示：No such file or directory 说明你是第一次使用git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"e-mail url"</span></div></pre></td></tr></table></figure></p>
+<p>然后连续3次回车，最终会生成一个文件在用户目录下，打开用户目录，找到.ssh\id_rsa.pub文件，记事本打开并复制里面的内容，打开你的github主页，进入个人设置 -&gt; SSH and GPG keys -&gt; New SSH key：<br><img src="/img/hexo/3.png" alt="enter description here"></p>
+<p>测试是否成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com <span class="comment"># 注意邮箱地址不用改</span></div></pre></td></tr></table></figure></p>
+<p>如果提示Are you sure you want to continue connecting (yes/no)?，输入yes，然后会看到：<br>Hi yourname! You’ve successfully authenticated, but GitHub does not provide shell access.<br>看到这个信息说明SSH已配置成功！<br>此时你还需要配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git config --global user.name <span class="string">"liuxianan"</span>// 你的github用户名，非昵称</div><div class="line">$ git config --global user.email  <span class="string">"xxx@qq.com"</span>// 填写你的github注册邮箱</div></pre></td></tr></table></figure></p>
+<h3 id="简单测试"><a href="#简单测试" class="headerlink" title="简单测试"></a>简单测试</h3><p>安装完hexo后<br>启动本地服务，进行文章预览调试<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s --debug //hexo service --debug也可以</div></pre></td></tr></table></figure></p>
+<p>生成静态页面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo g //hexo generate也可以</div></pre></td></tr></table></figure></p>
+<p>部署网页至Github<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d //hexo deploy也可以</div></pre></td></tr></table></figure></p>
+<h2 id="Step2-博客主题安装"><a href="#Step2-博客主题安装" class="headerlink" title="Step2. 博客主题安装"></a>Step2. 博客主题安装</h2><p>hexo提供了很多博客主题，都是由世界各地的网友贡献的，可以根据喜好自己选择。<br><a href="https://hexo.io/themes/" target="_blank" rel="external">点我：hexo博客主题</a></p>
+<p>本博客使用的主题是diapora，是一个极简风格的主题，适合喜欢摄影，影评，乐评和玩弄文字的你。</p>
+<p><a href="https://github.com/Fechin/hexo-theme-diaspora">diapora主题-Github链接</a></p>
+<h3 id="安装命令"><a href="#安装命令" class="headerlink" title="安装命令"></a>安装命令</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> ~/your-hexo-path/themes</div><div class="line">git <span class="built_in">clone</span> https://github.com/Fechin/hexo-theme-diaspora.git diaspora</div></pre></td></tr></table></figure>
+<h3 id="启用主题"><a href="#启用主题" class="headerlink" title="启用主题"></a>启用主题</h3><p>修改Hexo配置文件<font color="red"> <strong>_config</strong> </font>(hexo第一层目录下的)</p>
+<p>主题项设置为diaspora<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: dispora</div></pre></td></tr></table></figure></p>
+<h3 id="新建文章模板"><a href="#新建文章模板" class="headerlink" title="新建文章模板"></a>新建文章模板</h3><p>所有的文章均存储在以下路径中，文件以.md为后缀存储<br>~/your-hexo-path/source/_posts</p>
+<p>使用小书匠编辑器编写即可，下面是文章头部模板</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: My awesome title</div><div class="line">date: 2016-10-12 18:38:45</div><div class="line">tags: </div><div class="line">- 标签</div><div class="line">- 标签</div><div class="line">mp3: http://domain.com/awesome.mp3</div><div class="line">cover: http://domain.com/awesome.jpg</div><div class="line">---</div></pre></td></tr></table></figure>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 头部菜单，title: link</span></div><div class="line">menu:</div><div class="line">  Whoami: /whoami</div><div class="line">  Github: https://github.com/Fechin</div><div class="line">  Twitter: https://twitter.com/FechinLi</div><div class="line"></div><div class="line"><span class="comment"># 是否显示目录</span></div><div class="line">TOC: <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 是否自动播放音乐</span></div><div class="line">autoplay: <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 默认音乐（随机播放）</span></div><div class="line">mp3: </div><div class="line">    - http://link.hhtjim.com/163/425570952.mp3</div><div class="line">    - http://link.hhtjim.com/163/425570952.mp3</div><div class="line"></div><div class="line"><span class="comment"># 首页封面图, 为空时取文章的cover作为封面</span></div><div class="line">welcome_cover: <span class="comment"># /img/welcome-cover.jpg</span></div><div class="line"></div><div class="line"><span class="comment"># 默认文章封面图</span></div><div class="line">cover: /img/cover.jpg</div><div class="line"></div><div class="line"><span class="comment"># Gitalk 评论插件（https://github.com/gitalk/gitalk）</span></div><div class="line">gitalk:</div><div class="line">    <span class="comment"># 是否自动展开评论框</span></div><div class="line">    autoExpand: <span class="literal">false</span></div><div class="line">    <span class="comment"># 应用编号</span></div><div class="line">    clientID: <span class="string">''</span></div><div class="line">    <span class="comment"># 应用秘钥</span></div><div class="line">    clientSecret: <span class="string">''</span></div><div class="line">    <span class="comment"># issue仓库名</span></div><div class="line">    repo: <span class="string">''</span></div><div class="line">    <span class="comment"># Github名</span></div><div class="line">    owner: <span class="string">''</span></div><div class="line">    <span class="comment"># Github名</span></div><div class="line">    admin: [<span class="string">''</span>]</div><div class="line">    <span class="comment"># Ensure uniqueness and length less than 50</span></div><div class="line">    id: location.pathname</div><div class="line">    <span class="comment"># Facebook-like distraction free mode</span></div><div class="line">    distractionFreeMode: <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="comment"># 网站关键字</span></div><div class="line">keywords: Fechin</div><div class="line"></div><div class="line"><span class="comment"># 要使用google_analytics进行统计的话，这里需要配置ID</span></div><div class="line">google_analytics: </div><div class="line"></div><div class="line"><span class="comment"># 网站ico</span></div><div class="line">favicon: /img/favicon.png</div><div class="line"></div><div class="line"><span class="comment"># rss文件</span></div><div class="line">rss: atom.xml</div></pre></td></tr></table></figure>
+<hr>
+<p><center></center></p>
+<p><font size="4">Good Luck (*￣(oo)￣) </font><br>Author：北</p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2>
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="/music/1.mp3">
+            </audio>
+            
+        </div>
+        
+    <div id='gitalk-container' class="comment link"
+        data-ae='true'
+        data-ci='582d74b14532f73592c1'
+        data-cs='1dd63ae146c55843aa3f2c6bd8d44e7ed30f44a1'
+        data-r='Serena-Huang.github.io'
+        data-o='Serena-Huang'
+        data-a='Serena-Huang'
+        data-d='false'
+    >查看评论</div>
+
+
+    </div>
+    
+        <div class='side'>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Step1-PC环境配置"><span class="toc-number">1.</span> <span class="toc-text">Step1. PC环境配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo安装"><span class="toc-number">1.1.</span> <span class="toc-text">Hexo安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置SSH"><span class="toc-number">1.2.</span> <span class="toc-text">配置SSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单测试"><span class="toc-number">1.3.</span> <span class="toc-text">简单测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Step2-博客主题安装"><span class="toc-number">2.</span> <span class="toc-text">Step2. 博客主题安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装命令"><span class="toc-number">2.1.</span> <span class="toc-text">安装命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#启用主题"><span class="toc-number">2.2.</span> <span class="toc-text">启用主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#新建文章模板"><span class="toc-number">2.3.</span> <span class="toc-text">新建文章模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题配置"><span class="toc-number">2.4.</span> <span class="toc-text">主题配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#"><span class="toc-number">3.</span> <span class="toc-text"></span></a></li></ol>
+        </div>
+    
+</div>
+
+
+    </div>
+</div>
+</body>
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
+<script src="/js/plugin.js"></script>
+<script src="/js/diaspora.js"></script>
+<link rel="stylesheet" href="/photoswipe/photoswipe.css">
+<link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+<script src="/photoswipe/photoswipe.min.js"></script>
+<script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <!--  Controls are self-explanatory. Order can be changed. -->
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+</html>
